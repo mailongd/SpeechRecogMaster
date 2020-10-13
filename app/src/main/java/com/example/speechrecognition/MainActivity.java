@@ -36,8 +36,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mVoiceBtn = (ImageButton) findViewById(R.id.voiceBtn);
-
         bottomNavigationView = findViewById(R.id.bottom_nav);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(bottomNavMethod);
