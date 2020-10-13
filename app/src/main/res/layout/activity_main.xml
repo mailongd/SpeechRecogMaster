@@ -20,10 +20,7 @@
             app:popupTheme="@style/AppTheme.PopupOverlay" />
     </FrameLayout>
 
-    <include
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        layout="@layout/fragment_mic" />
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav"
@@ -34,7 +31,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_navigation" />
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
