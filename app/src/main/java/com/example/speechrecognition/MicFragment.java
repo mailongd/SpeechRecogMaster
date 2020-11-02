@@ -6,16 +6,22 @@ import android.speech.RecognizerIntent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import com.chaquo.python.PyObject;
+import com.chaquo.python.Python;
+import com.chaquo.python.android.AndroidPlatform;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 
 import static android.app.Activity.RESULT_OK;
+
 
 public class MicFragment extends Fragment {
 
@@ -26,8 +32,12 @@ public class MicFragment extends Fragment {
     ImageButton mVoiceBtn;
     List<String> wordBank = new ArrayList<>();
     List<String> responses = new ArrayList<>();
+    TextView tv;
+    EditText et;
+    Button button;
+
     boolean word = false;
-    View view;
+    private int contentView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -37,9 +47,37 @@ public class MicFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        setContentView(R.layout.fragment_mic);
+
         mTextTv = (TextView) getView().findViewById(R.id.textTv);
         mTextResponses = (TextView) getView().findViewById(R.id.textTv);
         mVoiceBtn = (ImageButton) getView().findViewById(R.id.voiceBtn);
+        wordBank = Arrays.asList(getResources().getStringArray(R.array.Words));
+        responses = Arrays.asList(getResources().getStringArray(R.array.responses));
+
+        et = getView().findViewById(R.id.phone);
+        tv = getView().findViewById(R.id.text_view);
+        button = getView().findViewById(R.id.button);
+
+        if (!Python.isStarted())
+            Python.start(new AndroidPlatform(getActivity()));
+
+        Python py = Python.getInstance();
+        final PyObject pyf = py.getModule("Test"); // python file
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String getPlainText = et.getText().toString();
+                // analyse mood here
+                PyObject analyseMood = pyf.callAttr("returnMood", getPlainText); // python func
+                String returnMood = analyseMood.toString();
+                tv.setText(returnMood);
+            }
+
+        });
+
+        //create array list and connect it to xml file
         wordBank = Arrays.asList(getResources().getStringArray(R.array.Words));
         responses = Arrays.asList(getResources().getStringArray(R.array.responses));
 
@@ -82,6 +120,14 @@ public class MicFragment extends Fragment {
                 responseItem++;
             }
         }
+    }
+
+    public void setContentView(int contentView) {
+        this.contentView = contentView;
+    }
+
+    public int getContentView() {
+        return contentView;
     }
 }
 
