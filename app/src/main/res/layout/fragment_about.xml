@@ -29,7 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Jorge Bot was made for our final year project unit.The UX designer is Long Mai. Kris Chavez is the back end developer. Xavier Pitsilos and Christian Temporal are the software developers for the PC version of the application"
+        android:text="Jorge Bot was made for our final year project unit.The UX designer is Long Mai. Kris Chavez is the back end developer. Xavier Pitsilos and Christian Temporal are the software developers for the PC version of the application."
         android:textColor="#ffffff"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
