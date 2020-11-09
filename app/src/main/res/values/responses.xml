@@ -1,8 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 <string-array name="responses">
-    <item>why are you sad?</item>
+    <item>please dont be sad. Its okay</item>
+    <item>if you feel depressed please talk to someone</item>
+    <item>if youre upset eat some icecream</item>
+    <item>if youre feeling sorrowful its only temporary.  You will be okay</item>
+    <item>I feel like youre abit frustrated. Please get better</item>
+
     <item>good thing you are happy</item>
+    <item>I am pleased that you are happy</item>
+    <item>Nice!  I am grateful too</item>
+    <item>I love what you love too!</item>
+    <item>I find that joyful aswell</item>
+
     <item>you are neutral</item>
+    <item>it does look easy</item>
+    <item>I am amazed aswell</item>
+    <item>satisfaction is key</item>
+    <item>its very good that it is accepting</item>
+
 </string-array>
 </resources>
+

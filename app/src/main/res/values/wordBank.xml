@@ -1,8 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="Words">
-         <item>sad</item>
-         <item>happy</item>
-         <item>neutral</item>
+        <item>sad</item>
+        <item>depressed</item>
+        <item>upset</item>
+        <item>sorrowful</item>
+        <item>frustrated</item>
+
+        <item>happy</item>
+        <item>pleased</item>
+        <item>grateful</item>
+        <item>loving</item>
+        <item>joyful</item>
+
+        <item>neutral</item>
+        <item>easy</item>
+        <item>amazed</item>
+        <item>satisfied</item>
+        <item>accepting</item>
+
 </string-array>
 </resources>
+
+

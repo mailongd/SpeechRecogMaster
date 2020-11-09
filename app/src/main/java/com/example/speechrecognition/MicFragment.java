@@ -1,5 +1,6 @@
 package com.example.speechrecognition;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
@@ -21,7 +22,6 @@ import java.util.List;
 import java.util.Locale;
 
 import static android.app.Activity.RESULT_OK;
-
 
 public class MicFragment extends Fragment {
 
@@ -45,6 +45,7 @@ public class MicFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_mic, container, false);
     }
 
+    @SuppressLint("CutPasteId")
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         setContentView(R.layout.fragment_mic);
@@ -125,7 +126,6 @@ public class MicFragment extends Fragment {
     public void setContentView(int contentView) {
         this.contentView = contentView;
     }
-
     public int getContentView() {
         return contentView;
     }
