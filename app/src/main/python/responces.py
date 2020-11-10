@@ -1,7 +1,7 @@
 ## = ok 
 ### = not ok
-from operations import Operations
-from datetime import datetime
+#from operations import Operations
+#from datetime import datetime
 
 class Commands:
     # simple starter/ender commands
@@ -109,9 +109,9 @@ class Responses:
     soberResp = ["I'm not doing that again", "Oh what a nighttt"] # extra t's for exageration
 
     # operational
-    weatherResp = ["The weather is " + Operations.getWeather() + " Degrees"]  
-    dayResp = ["The day is " + datetime.now().strftime("%A")] 
-    dateResp = ["The date is " + datetime.now().strftime("%d %B %Y")] 
+    weatherResp = ["The weather is ", " Degrees"]
+    dayResp = ["The day is "]
+    dateResp = ["The date is "]
     shutdownResp = ["The computer will shutdown in 15 seconds, say cancel to cancel the shutdown"] 
     abortResp = ["Shutdown has been cancelled"]
 
